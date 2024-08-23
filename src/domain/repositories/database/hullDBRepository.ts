@@ -1,7 +1,7 @@
-import HullRepository from "../../contracts/repositories/hullRepository";
+import IHullRepository from "../../contracts/repositories/hullRepository";
 import { Hull } from "../../models/hull";
 
-export class HullDBRepository implements HullRepository {
+export class HullDBRepository implements IHullRepository {
     async getList(): Promise<Hull[]> {
         try {
             const response = await fetch(import.meta.env.VITE_API_URL + '/hulls');

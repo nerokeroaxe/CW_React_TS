@@ -1,8 +1,8 @@
 import { SpaceShipDTO } from "../../contracts/DTOs/spaceShipDTO";
-import SpaceShipRepository from "../../contracts/repositories/spaceShipRepository";
+import ISpaceShipRepository from "../../contracts/repositories/spaceShipRepository";
 
 const PREFIX: string = "spaceShip_";
-export default class SpaceShipLSRepository implements SpaceShipRepository {
+export default class SpaceShipLSRepository implements ISpaceShipRepository {
     getList(): Promise<SpaceShipDTO[]> {
         var spaceShips: SpaceShipDTO[] = [];
         for (var i = 0; i < localStorage.length; i++) {

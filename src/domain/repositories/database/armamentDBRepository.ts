@@ -1,7 +1,7 @@
-import ArmamentRepository from "../../contracts/repositories/armamentRepostory";
+import IArmamentRepository from "../../contracts/repositories/armamentRepostory";
 import { Armament } from "../../models/armament";
 
-export class ArmamentDBRepository implements ArmamentRepository {
+export class ArmamentDBRepository implements IArmamentRepository {
     async getList(): Promise<Armament[]> {
         try {
             const response = await fetch(import.meta.env.VITE_API_URL + '/armaments');

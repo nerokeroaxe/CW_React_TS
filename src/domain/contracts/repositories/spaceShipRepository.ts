@@ -1,6 +1,6 @@
 import { SpaceShipDTO } from "../DTOs/spaceShipDTO";
 
-export default interface SpaceShipRepository {
+export default interface ISpaceShipRepository {
     getList(): Promise<SpaceShipDTO[]>
     get(name: string): Promise<SpaceShipDTO | null>
     save(spaceShip: SpaceShipDTO): void

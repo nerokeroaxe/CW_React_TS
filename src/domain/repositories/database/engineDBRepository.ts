@@ -1,7 +1,7 @@
-import EngineRepository from "../../contracts/repositories/engineRepository";
+import IEngineRepository from "../../contracts/repositories/engineRepository";
 import { Engine } from "../../models/engine";
 
-export class EngineDBRepository implements EngineRepository {
+export class EngineDBRepository implements IEngineRepository {
     async getList(): Promise<Engine[]> {
         try {
             const response = await fetch(import.meta.env.VITE_API_URL + '/engines');
