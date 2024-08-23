@@ -13,12 +13,12 @@ export default class SpaceShip {
     
     private _weight: number = 0
     private _price: number = 0
-    constructor(dto: SpaceShipDTO) {
+    constructor(dto: SpaceShipDTO, hull: Hull, engine: Engine, armament: Armament) {
         this.name = dto.name
         this.description = dto.description
-        this._hull = dto.hull
-        this._engine = dto.engine
-        this._armament = dto.armament
+        this._hull = hull
+        this._engine = engine
+        this._armament = armament
         this.updateWeightAndPrice()
     }
 
@@ -61,9 +61,9 @@ export default class SpaceShip {
         return {
             name: this.name,
             description: this.description,
-            engine: this.engine,
-            armament: this.armament,
-            hull: this.hull,
+            engine: this.engine.name,
+            armament: this.armament.name,
+            hull: this.hull.name,
             weight: this.weight,
             price: this.price
         }
