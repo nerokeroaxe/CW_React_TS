@@ -1,6 +1,8 @@
+import { injectable } from "inversify";
 import IEngineRepository from "../../contracts/repositories/engineRepository";
 import { Engine } from "../../models/engine";
 
+@injectable()
 export class EngineDBRepository implements IEngineRepository {
     async getList(): Promise<Engine[]> {
         try {

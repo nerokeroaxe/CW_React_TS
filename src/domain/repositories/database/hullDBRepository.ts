@@ -1,6 +1,8 @@
+import { injectable } from "inversify";
 import IHullRepository from "../../contracts/repositories/hullRepository";
 import { Hull } from "../../models/hull";
 
+@injectable()
 export class HullDBRepository implements IHullRepository {
     async getList(): Promise<Hull[]> {
         try {

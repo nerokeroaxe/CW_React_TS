@@ -1,6 +1,8 @@
+import { injectable } from "inversify";
 import IArmamentRepository from "../../contracts/repositories/armamentRepostory";
 import { Armament } from "../../models/armament";
 
+@injectable()
 export class ArmamentDBRepository implements IArmamentRepository {
     async getList(): Promise<Armament[]> {
         try {

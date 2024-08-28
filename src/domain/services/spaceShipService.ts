@@ -1,17 +1,20 @@
+import { inject, injectable } from "inversify";
 import { SpaceShipDTO } from "../contracts/DTOs/spaceShipDTO";
-import IArmamentRepository from "../contracts/repositories/armamentRepostory";
-import IEngineRepository from "../contracts/repositories/engineRepository";
-import IHullRepository from "../contracts/repositories/hullRepository";
-import ISpaceShipRepository from "../contracts/repositories/spaceShipRepository";
+import type IArmamentRepository from "../contracts/repositories/armamentRepostory";
+import type IEngineRepository from "../contracts/repositories/engineRepository";
+import type IHullRepository from "../contracts/repositories/hullRepository";
+import type ISpaceShipRepository from "../contracts/repositories/spaceShipRepository";
 import ISpaceShipService from "../contracts/services/spaceShipService";
 import SpaceShip from "../models/spaceShip";
+import REPO from "../IoC/types.repo";
 
+@injectable()
 export default class SpaceShipService implements ISpaceShipService {
     constructor(
-        private _spaceShipRepos: ISpaceShipRepository, 
-        private _hullRepos: IHullRepository,
-        private _engineRepos: IEngineRepository,
-        private _armamentRepos: IArmamentRepository
+        @inject(REPO.ISpaceShipRepository)  private _spaceShipRepos: ISpaceShipRepository, 
+        @inject(REPO.IHullRepository)       private _hullRepos: IHullRepository,
+        @inject(REPO.IEngineRepository)     private _engineRepos: IEngineRepository,
+        @inject(REPO.IArmamentRepository)   private _armamentRepos: IArmamentRepository
     ) {}
     async getList(): Promise<SpaceShipDTO[]> {
         return await this._spaceShipRepos.getList();

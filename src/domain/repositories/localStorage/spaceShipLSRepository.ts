@@ -1,7 +1,9 @@
+import { injectable } from "inversify";
 import { SpaceShipDTO } from "../../contracts/DTOs/spaceShipDTO";
 import ISpaceShipRepository from "../../contracts/repositories/spaceShipRepository";
 
 const PREFIX: string = "spaceShip_";
+@injectable()
 export default class SpaceShipLSRepository implements ISpaceShipRepository {
     getList(): Promise<SpaceShipDTO[]> {
         let spaceShips: SpaceShipDTO[] = [];

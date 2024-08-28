@@ -1,9 +1,13 @@
+import { inject, injectable } from "inversify";
 import { SpaceShipDTO } from "../contracts/DTOs/spaceShipDTO";
-import ISpaceShipService from "../contracts/services/spaceShipService";
+import type ISpaceShipService from "../contracts/services/spaceShipService";
 import SpaceShip from "../models/spaceShip";
-
+import SERVICE from "../IoC/types.service";
+@injectable()
 export default class SpaceShipController {
-    constructor(private _spaceShipService: ISpaceShipService) {}
+    constructor(
+        @inject(SERVICE.ISpaceShipService) private _spaceShipService: ISpaceShipService
+    ) {}
 
     async getList(): Promise<SpaceShipDTO[]> {
         try {
