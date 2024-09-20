@@ -1,0 +1,16 @@
+header {
+    background: rgb(37,73,121);
+    background: -moz-linear-gradient(90deg, rgba(37,73,121,1) 0%, rgba(0,0,0,0) 80%);
+    background: -webkit-linear-gradient(90deg, rgba(37,73,121,1) 0%, rgba(0,0,0,0) 80%);
+    background: linear-gradient(90deg, rgba(37,73,121,1) 0%, rgba(0,0,0,0) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#254979",endColorstr="#000000",GradientType=1);
+
+    display: flex;
+
+}
+
+.logo {
+    margin: 10px 10px 0px 15px;
+    width: 80px;
+}
+
