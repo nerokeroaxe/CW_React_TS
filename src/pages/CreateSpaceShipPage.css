@@ -1,0 +1,44 @@
+.main-container {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    
+    grid-template-rows: 20vh 40vh auto;
+}
+
+.input-name {
+    grid-row: 1;
+    grid-column: 2;
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: large;
+    color: inherit;
+    border-bottom: 4px solid var(--main-color);
+}
+
+.hull-img {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: center;
+}
+
+.btn-back {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.btn-next {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.menu {
+    grid-row: 3;
+    grid-column: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid var(--sub-color);
+    padding: 10px;
+}

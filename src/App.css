@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+:root {
+    --main-text: #d8ece2;
+    --sub-text: #a6cad3;
+    --main-color: #254979;
+    --sub-color: #55a6a3;
+    --dark: #081451;
+    --super-dark: #210028;
+}
+
+body {
+    font-family: 'Tiny5', sans-serif;
+    color: var(--main-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text);
+}
+
+.clickable:hover {
+    color: var(--sub-text);
+}
+
+
+.btn {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.btn:hover {
+    color: var(--sub-color);
+    border-bottom: 2px solid var(--sub-color);
+}
